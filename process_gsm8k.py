@@ -1,4 +1,4 @@
-mport json
+import json
 from transformers import AutoTokenizer
 
 # 以BERT为例（其他模型只需替换模型名称）
@@ -17,8 +17,8 @@ for sentence in dataset:
     words = tokenizer.tokenize(sentence)
     if len(words) == 0:
          continue
-     len_num = len(words) // input_len
-     if len_num == 0:
+    len_num = len(words) // input_len
+    if len_num == 0:
         multiplier = (input_len // len(words)) + 1
         repeated_len = words * multiplier
         words = repeated_len[:input_len]
